@@ -61,7 +61,7 @@ export default function App() {
       <footer>
       <Card className="mt-4">
         <CardHeader>
-          <CardTitle className="flex"><a href="//testwiki.hyonsu.com">the tree</a>&nbsp;|&nbsp;<p>modern</p></CardTitle>
+          <CardTitle className="flex"><a href="//testwiki.hyonsu.com">the tree</a>&nbsp;|&nbsp;<a href="//github.com/wikiengine/modern">modern</a></CardTitle>
         </CardHeader>
       </Card>
       </footer>

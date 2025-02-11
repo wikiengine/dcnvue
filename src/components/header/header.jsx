@@ -8,13 +8,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Moon, Sun, Menu } from 'lucide-react'
+import { Moon, Sun, Menu, Clock, MessageSquareText } from 'lucide-react'
 import { useState } from "react"
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 
 const navLinks = [
-    { href: "/RecentChanges", label: "최근 변경" },
-    { href: "/RecentDiscuss", label: "최근 토론" },
+    { href: "/RecentChanges", label: "최근 변경", icon: <Clock/> },
+    { href: "/RecentDiscuss", label: "최근 토론", icon: <MessageSquareText/> },
 ]
 
 function UserMenu() {
@@ -97,8 +97,8 @@ function NavItems() {
     return (
         <div className="hidden md:flex ml-6 space-x-4">
                 {navLinks.map((link) => (
-                  <a key={link.href} href={link.href} className="text-lg font-medium hover:text-primary">
-                    {link.label}
+                  <a key={link.href} href={link.href} className="text-md font-medium hover:text-primary flex gap-1">
+                    {link.icon}{link.label}
                   </a>
                 ))}
         </div>
@@ -124,9 +124,10 @@ function NavSheet() {
                         <a
                         key={link.href}
                         href={link.href}
-                        className="text-sm font-medium hover:text-primary"
+                        className="text-sm font-medium hover:text-primary flex gap-2"
                         onClick={() => setIsMobileMenuOpen(false)}
                         >
+                        {link.icon}
                         {link.label}
                         </a>
                     ))}
